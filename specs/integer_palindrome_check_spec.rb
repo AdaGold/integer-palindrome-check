@@ -17,20 +17,20 @@ describe "integer palindrome check" do
     end
   end
 
-  # check for edge cases
+  check for edge cases
   describe "edge cases" do
     # if the parameter is an object, check for nil
     it "nil object is not an integer" do
       is_palindrome(nil).must_equal false
     end
-
-    it "single digit palindrome" do
-      is_palindrome(9).must_equal true
-    end
-
-    it "double digit palindrome" do
-      is_palindrome(77).must_equal true
-    end
+  #
+  #   it "single digit palindrome" do
+  #     is_palindrome(9).must_equal true
+  #   end
+  #
+  #   it "double digit palindrome" do
+  #     is_palindrome(77).must_equal true
+  #   end
 
     it "negative number" do
       is_palindrome(-44).must_equal false
