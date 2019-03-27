@@ -35,10 +35,13 @@ def is_palindrome(number)
       return false
     end
 
-    number = (number % div) # remove one digit from the left
-    number = number / 10 # remove one digit from the right
+    number = (number % div) # remove one digit from the left (left considered before)
+    number = number / 10 # remove one digit from the right (right considered before)
     div /= 100 # remove two digits from the divisor to compensate for left and right digits
-    digits -= 2
+    digits -= 2 # since one digit from the left and one digit from the right were removed
+
+    # After removing the left and right digit, we may have zeroes in between
+    # Take care of leading zeroes after removing left most digit.
     current_digits = get_digit_count(number)
     if current_digits < digits
         while current_digits < digits
@@ -51,6 +54,7 @@ def is_palindrome(number)
         end
     end
   end
+  
   return true
 end
 
