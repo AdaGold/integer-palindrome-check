@@ -15,6 +15,10 @@ describe "integer palindrome check" do
     it "not a palindrome" do
       is_palindrome(1728371).must_equal false
     end
+    
+    it "1011101 is a palindrome" do
+      expect(is_palindrome(1011101)).must_equal true
+    end
   end
 
   # check for edge cases
